@@ -1,0 +1,4 @@
+data/raw/ml-32m/*.csv filter=lfs diff=lfs merge=lfs -text
+notebooks/*.csv filter=lfs diff=lfs merge=lfs -text
+notebooks/*.pkl filter=lfs diff=lfs merge=lfs -text
+models/*.pkl filter=lfs diff=lfs merge=lfs -text

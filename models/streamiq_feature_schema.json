@@ -1,0 +1,92 @@
+{
+  "base_features": [
+    "rating_count_lag1",
+    "rating_count_lag2",
+    "rating_count_lag3",
+    "avg_rating_lag1",
+    "unique_users_lag1",
+    "rating_count_3m",
+    "rating_count_6m",
+    "users_3m"
+  ],
+  "numeric_features": [
+    "release_year",
+    "runtime",
+    "genre_count",
+    "movie_age"
+  ],
+  "categorical_features": [
+    "language",
+    "country"
+  ],
+  "genre_columns": [
+    "Action",
+    "Adventure",
+    "Animation",
+    "Children",
+    "Comedy",
+    "Crime",
+    "Documentary",
+    "Drama",
+    "Fantasy",
+    "Film-Noir",
+    "Horror",
+    "IMAX",
+    "Musical",
+    "Mystery",
+    "Romance",
+    "Sci-Fi",
+    "Thriller",
+    "War",
+    "Western"
+  ],
+  "categories": {
+    "language": [
+      "Unknown"
+    ],
+    "country": [
+      "Unknown"
+    ]
+  },
+  "medians": {
+    "release_year": 1997.0,
+    "runtime": 90.0,
+    "genre_count": 2.0,
+    "movie_age": 13.0
+  },
+  "feature_columns": [
+    "rating_count_lag1",
+    "rating_count_lag2",
+    "rating_count_lag3",
+    "avg_rating_lag1",
+    "unique_users_lag1",
+    "rating_count_3m",
+    "rating_count_6m",
+    "users_3m",
+    "release_year",
+    "runtime",
+    "genre_count",
+    "movie_age",
+    "genre__Action",
+    "genre__Adventure",
+    "genre__Animation",
+    "genre__Children",
+    "genre__Comedy",
+    "genre__Crime",
+    "genre__Documentary",
+    "genre__Drama",
+    "genre__Fantasy",
+    "genre__Film-Noir",
+    "genre__Horror",
+    "genre__IMAX",
+    "genre__Musical",
+    "genre__Mystery",
+    "genre__Romance",
+    "genre__Sci-Fi",
+    "genre__Thriller",
+    "genre__War",
+    "genre__Western",
+    "language__Unknown",
+    "country__Unknown"
+  ]
+}
