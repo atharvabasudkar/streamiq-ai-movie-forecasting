@@ -196,7 +196,15 @@ def render_movie_header(
             runtime = metadata.get("runtime", np.nan)
             runtime_label = f"{int(runtime)} min" if pd.notna(runtime) else "Unknown runtime"
             st.write(f"Genre: {genre}")
-            st.write(f"Language: {language} · Country: {country} · Runtime: {runtime_label}")
+            known_details = []
+            if language not in ("Unknown", "nan"):
+                known_details.append(f"Language: {language}")
+            if country not in ("Unknown", "nan"):
+                known_details.append(f"Country: {country}")
+            if runtime_label != "Unknown runtime":
+                known_details.append(f"Runtime: {runtime_label}")
+            if known_details:
+                st.write(" · ".join(known_details))
         st.write(f"Movie ID: {movie_id}")
         st.write(f"Available historical months: {selected_data.shape[0]}")
         st.write(f"Selected analysis month: {pd.to_datetime(selected_month).strftime('%Y-%m-%d')}")
@@ -298,6 +306,9 @@ def render_metadata_panel(metadata: pd.Series | None, selected_month: str) -> No
         ("Country", metadata.get("country", "Unknown")),
         ("Genre Count", int(metadata.get("genre_count", 0))),
     ]
+    values = [(label, value) for label, value in values if value not in ("Unknown", "Unknown runtime", "nan")]
+    if not values:
+        return
     st.markdown("### MOVIE METADATA")
     columns = st.columns(4)
     for index, (label, value) in enumerate(values):
